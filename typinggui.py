@@ -73,7 +73,7 @@ def generate_voice():
         final_audio = generate_talk_audio(text, clips, pitch, speed)
 
         os.makedirs(os.path.dirname(output_path), exist_ok=True)
-        final_audio.export(output_path, format="wav")
+        final_audio.export(output_path, format="ogg")
         messagebox.showinfo("Success", f"Saved to {output_path}")
     except Exception as e:
         messagebox.showerror("Error", str(e))
@@ -113,7 +113,7 @@ speed_entry.grid(row=3, column=1, pady=5)
 # Output path
 ttk.Label(frame, text="Output filename:").grid(row=4, column=0, sticky="w")
 output_entry = ttk.Entry(frame, width=30)
-output_entry.insert(0, "outputs/typingvoice.wav")
+output_entry.insert(0, "outputs/typingvoice.ogg")
 output_entry.grid(row=4, column=1, pady=5)
 
 # Generate button

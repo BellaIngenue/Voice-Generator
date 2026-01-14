@@ -55,7 +55,7 @@ if __name__ == "__main__":
     parser.add_argument("--category", default="soft", help="Sound folder to use (inside /sounds/)")
     parser.add_argument("--pitch", type=float, default=0, help="Base pitch shift in semitones")
     parser.add_argument("--speed", type=float, default=1.2, help="Playback speed multiplier")
-    parser.add_argument("--output", default="outputs/typingvoice.wav", help="Output .wav file name")
+    parser.add_argument("--output", default="outputs/typingvoice.ogg", help="Output .ogg file name")
 
     args = parser.parse_args()
 
@@ -68,6 +68,6 @@ if __name__ == "__main__":
 
     clips = load_clips(args.category if args.category else None)
     final_audio = generate_talk_audio(args.text, clips, args.pitch, args.speed)
-    final_audio.export(args.output, format="wav")
+    final_audio.export(args.output, format="ogg")
 
     print("✅ Done!")
