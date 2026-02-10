@@ -80,7 +80,7 @@ def generate_voice():
 
 # --- Build GUI ---
 root = tk.Tk()
-root.title("Undertale Dialogue Voice Generator")
+root.title("Dialogue Voice Generator")
 
 frame = ttk.Frame(root, padding=15)
 frame.grid(row=0, column=0)
